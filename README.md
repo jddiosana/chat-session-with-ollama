@@ -69,6 +69,8 @@ A Streamlit-based chatbot app that leverages the Ollama Llama 3.2 model and stor
   ```
   This is because the model pull is not yet complete. You must wait for the log message above to appear before using the app.
 
+At the initial chat after the model pull is complete, you might notice that the model takes a while to respond. This is because the model is still warming up. This only happens at the first chat. Once the model is warmed up, expect a faster response time.
+
 ### How to Use the App
 
 1. **Start a New Chat Session**:
