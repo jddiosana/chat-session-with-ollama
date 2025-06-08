@@ -53,6 +53,7 @@ A Streamlit-based chatbot app that leverages the Ollama Llama 3.2 model and stor
   pulling manifest
   ```
 
+[!IMPORTANT]
 - **The app will be accessible at [localhost:8501](http://localhost:8501)**, but it will not be functional until the Ollama model is fully pulled and ready.
 
 - Wait for the following log message before using the app:
@@ -60,6 +61,12 @@ A Streamlit-based chatbot app that leverages the Ollama Llama 3.2 model and stor
   ```
   ✅ Model llama3.2 is ready to use! Try running the app now: localhost:8501
   ```
+
+- If you entered a query before seeing the above log message, you will encounter the following error:
+  ```
+  ERROR: ollama._types.ResponseError: model "llama3.2" not found, try pulling it first
+  ```
+  This is because the model pull is not yet complete. You must wait for the log message above to appear before using the app.
 
 ### How to Use the App
 
