@@ -53,7 +53,8 @@ A Streamlit-based chatbot app that leverages the Ollama Llama 3.2 model and stor
   pulling manifest
   ```
 
-[!IMPORTANT]
+#### **[IMPORTANT]**
+
 - **The app will be accessible at [localhost:8501](http://localhost:8501)**, but it will not be functional until the Ollama model is fully pulled and ready.
 
 - Wait for the following log message before using the app:
