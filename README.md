@@ -198,3 +198,7 @@ pytest
 - **Port Conflicts**: If ports 5432 (Postgres), 11434 (Ollama), or 8501 (Streamlit) are in use, stop the conflicting services or change the ports in your configuration.
 
 ---
+
+## Documentation
+
+A full technical documentation including the development process and challenges faced can be found in this Jupyter Notebook: [LLM_Chatbot_Development_Documentation.ipynb](https://github.com/jddiosana/chat-session-with-ollama/blob/master/LLM_Chatbot_Development_Documentation.ipynb).
