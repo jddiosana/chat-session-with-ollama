@@ -177,6 +177,11 @@ streamlit run app/main.py
 ```
 - The app will be available at [http://localhost:8501](http://localhost:8501).
 
+#### 8. Run the Tests
+```bash
+pytest
+```
+
 #### Troubleshooting
 - **Database Connection Issues**: Ensure PostgreSQL is running and the credentials in your `.env` file match your local setup.
 - **Ollama Not Found**: Make sure Ollama is installed and running on your machine.
