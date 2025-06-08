@@ -58,7 +58,7 @@ def get_chat_history(session_id):
 
 def list_sessions():
     cursor = SYNC_CONNECTION.cursor()
-    # get distinct sessions with the 
+    # get distinct sessions
     cursor.execute("""
         WITH latest_messages AS (
             SELECT session_id, MAX(created_at) as last_activity
