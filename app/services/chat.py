@@ -24,14 +24,18 @@ DB_PASSWORD = os.getenv("DB_PASSWORD", "password")
 DB_HOST = os.getenv("DB_HOST", "db")
 DB_PORT = os.getenv("DB_PORT", "5432")
 
-SYNC_CONNECTION = get_connection()
+IS_TESTING = os.getenv("IS_TESTING", "0") == "1"
 
-PostgresChatMessageHistory.create_tables(
-    SYNC_CONNECTION,
-    CHAT_HISTORY_TABLE
-)
-
-CHAIN_WITH_HISTORY = get_chat_chain_with_history(CHAT_HISTORY_TABLE, SYNC_CONNECTION)
+if not IS_TESTING:
+    SYNC_CONNECTION = get_connection()
+    PostgresChatMessageHistory.create_tables(
+        SYNC_CONNECTION,
+        CHAT_HISTORY_TABLE
+    )
+    CHAIN_WITH_HISTORY = get_chat_chain_with_history(CHAT_HISTORY_TABLE, SYNC_CONNECTION)
+else:
+    SYNC_CONNECTION = None
+    CHAIN_WITH_HISTORY = None
 
 def get_session_history(session_id):
     return PostgresChatMessageHistory(

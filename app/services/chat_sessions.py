@@ -18,6 +18,8 @@ OLLAMA_URL = os.getenv("OLLAMA_URL", "http://ollama:11434")
 
 SESSION_TITLES_TABLE = os.getenv("SESSION_TITLES_TABLE", "session_titles")
 
+IS_TESTING = os.getenv("IS_TESTING", "0") == "1"
+
 # Create a thread pool for running synchronous operations
 thread_pool = ThreadPoolExecutor()
 
@@ -132,6 +134,5 @@ def get_session_title_sync(session_id: str) -> str:
     """Synchronous version of get_session_title."""
     return get_title_from_db(session_id)
 
-# Initialize the table when the module is imported
-init_session_titles_table()
-
+if not IS_TESTING:
+    init_session_titles_table()
